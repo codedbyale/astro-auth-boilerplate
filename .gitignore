@@ -1,0 +1,39 @@
+# build output
+dist/
+# generated types
+.astro/
+.agents/
+skills-lock.json
+
+# dependencies
+node_modules/
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+.env.local
+.env.*.local
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# local databases
+*.db
+*.db-*
+
+# test artifacts
+coverage/
+
+# drizzle local metadata
+drizzle/

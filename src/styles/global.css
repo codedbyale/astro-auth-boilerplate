@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+	--background: oklch(0.985 0.004 95);
+	--foreground: oklch(0.255 0.015 80);
+	--card: oklch(1 0 0);
+	--card-foreground: oklch(0.255 0.015 80);
+	--muted: oklch(0.955 0.01 95);
+	--muted-foreground: oklch(0.49 0.015 80);
+	--border: oklch(0.89 0.01 90);
+	--input: oklch(0.89 0.01 90);
+	--primary: oklch(0.42 0.09 220);
+	--primary-foreground: oklch(0.98 0.01 220);
+	--secondary: oklch(0.92 0.018 160);
+	--secondary-foreground: oklch(0.32 0.04 160);
+	--accent: oklch(0.93 0.04 70);
+	--accent-foreground: oklch(0.35 0.05 70);
+	--ring: oklch(0.63 0.12 220);
+	--radius: 1rem;
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-ring: var(--ring);
+	--radius-sm: calc(var(--radius) - 0.25rem);
+	--radius-md: calc(var(--radius) - 0.125rem);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 0.25rem);
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-background text-foreground antialiased;
+		background-image:
+			radial-gradient(circle at top left, color-mix(in oklab, var(--accent) 28%, transparent), transparent 28%),
+			radial-gradient(circle at top right, color-mix(in oklab, var(--secondary) 24%, transparent), transparent 32%),
+			linear-gradient(180deg, color-mix(in oklab, white 75%, var(--background)) 0%, var(--background) 50%);
+		min-height: 100vh;
+		font-family: "Satoshi", "Avenir Next", "Segoe UI", sans-serif;
+	}
+
+	::selection {
+		background: color-mix(in oklab, var(--primary) 28%, white);
+		color: var(--foreground);
+	}
+}

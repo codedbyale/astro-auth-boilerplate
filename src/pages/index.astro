@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/app/layouts/root-layout.astro";
+import { AuthEntryCard } from "@/features/auth";
+import { HomePage } from "@/pages/home";
+---
+
+<RootLayout title="Astro Auth Boilerplate">
+	<HomePage />
+	<div class="mx-auto max-w-6xl px-6 pb-10 sm:px-10 sm:pb-12 lg:px-12">
+		<AuthEntryCard />
+	</div>
+</RootLayout>

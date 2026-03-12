@@ -1,0 +1,16 @@
+---
+import RootLayout from "@/app/layouts/root-layout.astro";
+import { requireServerSession, SessionPanel } from "@/features/auth";
+
+const session = await requireServerSession(Astro);
+
+if (session instanceof Response) {
+	return session;
+}
+---
+
+<RootLayout title="Dashboard | Astro Auth Boilerplate">
+	<div class="mx-auto flex min-h-screen max-w-6xl items-center px-6 py-10 sm:px-10 lg:px-12">
+		<SessionPanel client:load session={session} />
+	</div>
+</RootLayout>
