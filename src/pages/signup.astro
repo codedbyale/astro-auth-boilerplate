@@ -1,7 +1,7 @@
 ---
 import RootLayout from "@/app/layouts/root-layout.astro";
 import { getServerSession } from "@/features/auth/api/get-server-session";
-import { AuthForm } from "@/features/auth";
+import { AuthForm } from "@/features/auth/ui/auth-form";
 
 const session = await getServerSession(Astro.request);
 

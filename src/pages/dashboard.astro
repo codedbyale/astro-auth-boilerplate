@@ -1,6 +1,7 @@
 ---
 import RootLayout from "@/app/layouts/root-layout.astro";
-import { requireServerSession, SessionPanel } from "@/features/auth";
+import { requireServerSession } from "@/features/auth/api/get-server-session";
+import { SessionPanel } from "@/features/auth/ui/session-panel";
 
 const session = await requireServerSession(Astro);
 
